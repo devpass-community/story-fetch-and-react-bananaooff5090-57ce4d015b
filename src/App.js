@@ -14,6 +14,7 @@ function App() {
     try {
       const response = await axios.get('https://meowfacts.herokuapp.com');
       const result = response.data
+      
       setQuote(result.data[0])
     } catch (error) {
       console.error(error);
