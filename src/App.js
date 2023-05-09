@@ -12,9 +12,9 @@ function App() {
     setIsLoading(false)
     
     try {
-      const response = await axios.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1');
+      const response = await axios.get('https://meowfacts.herokuapp.com');
       const result = response.data
-      setQuote(result.text)
+      setQuote(result.data[0])
     } catch (error) {
       console.error(error);
     }
