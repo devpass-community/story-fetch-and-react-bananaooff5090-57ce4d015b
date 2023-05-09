@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios"
 import Container from "./components/Container";
 import Spinner from "./components/Spinner";
 
