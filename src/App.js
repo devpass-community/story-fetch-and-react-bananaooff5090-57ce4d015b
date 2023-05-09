@@ -12,9 +12,9 @@ function App() {
     setIsLoading(false)
     
     try {
-      const response = await axios.get('https://meowfacts.herokuapp.com');
-      const result = response.data
-      
+      const response = await fetch('https://meowfacts.herokuapp.com');
+      let result = await response.json()
+
       setQuote(result.data[0])
     } catch (error) {
       console.error(error);
