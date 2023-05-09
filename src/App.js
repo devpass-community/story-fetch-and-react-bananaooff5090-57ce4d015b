@@ -4,12 +4,20 @@ import Spinner from "./components/Spinner";
 
 function App() {
   const [quote, setQuote] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClick = async (event) => {
-    setIsLoading(true)
     // TODO
     setIsLoading(false)
+    
+    try {
+      const response = await fetch('https://meowfacts.herokuapp.com');
+      let result = await response.json()
+
+      setQuote(result.data[0])
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
